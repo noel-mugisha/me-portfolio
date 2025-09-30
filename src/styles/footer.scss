@@ -1,0 +1,12 @@
+footer {
+    border-top: 1px solid var(--lines-color);
+
+    .connect-link {
+        border: var(--lines-color) solid;
+        border-width: 0 0px 0 1px;
+      }
+      
+    .connect-link:last-of-type {
+        border-right: var(--lines-color) solid 1px;
+    }
+}

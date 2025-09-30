@@ -1,0 +1,19 @@
+.border-secondary {
+    border: 1px solid var(--lines-color);
+    border-top: 0;
+}
+
+.blurs {
+    filter: blur(0px);
+    animation: blur-rotate 2s linear infinite alternate;
+    transform: scaleY(150);
+}
+
+@keyframes blur-rotate {
+    from {
+        filter: blur(0);
+       }
+    to {
+        filter: blur(40px);
+    }
+}

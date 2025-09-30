@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["T3WQ33GWG5.com.catchcoin.web3"],
+        "paths": [
+          "/home",
+          "/profile/*",
+          "/details/*"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+nav {
+    border-bottom: 1px solid var(--lines-color);
+}
+
+.navlink {
+    border: var(--lines-color) solid;
+    border-width: 0 0px 0 1px;
+  }
+  
+  .navlink:last-of-type {
+    border-right: var(--lines-color) solid 1px;
+  }
+  
+  .navlink-active {
+    color: var(--secondary-4);
+    border-bottom: 2px solid var(--accent-1) !important;
+  }

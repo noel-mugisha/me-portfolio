@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-font: Fira Code, sans-serif;
+  --primary-1: #01080E;
+  --primary-2: #011e36;
+  --secondary-1: #607B96;
+  --secondary-2: #3C9D93;
+  --secondary-3: #4D5BCE;
+  --secondary-4: #FFFFFF;
+  --accent-1: #FEA55F;
+  --accent-2: #43D9AD;
+  --accent-3: #E99287;
+  --accent-4: #C98BDF;
+  --accent-5: #e6db74;
+  --accent-6: dodgerblue;
+  --lines-color: #293a4d;
+  --secondary-white: #E5E9F0;
+  --input-bg: #011221;
+  --input-border: #1E2D3D;
+}
+.input-border {
+  border: 1px solid var(--input-border);
+  padding-left: 15px
+}
+
+.input-border:focus {
+  transition: .5s;
+  border: 1px solid var(--secondary-1);
+  outline: none;
+}
+
+.input-border:hover {
+  transition: .5s;
+  border: 1px solid var(--secondary-1);
+}
+
+.input-bg {
+  background-color: var(--input-bg);
+}
+
+.input-color {
+  color: var(--input-bg);
+}
+
+.accent-3-bg {
+  background-color: var(--accent-3);
+}
+
+.accent-1 {
+  color: var(--accent-1)
+}
+
+.accent-2 {
+  color: var(--accent-2)
+}
+
+.accent-3 {
+  color: var(--accent-3)
+}
+
+.accent-4 {
+  color: var(--accent-4)
+}
+
+.accent-5 {
+  color: var(--accent-5)
+}
+
+.accent-6 {
+  color : var(--accent-6)
+}
+
+.secondary-1 {
+  color: var(--secondary-1)
+}
+
+.secondary-2 {
+  color: var(--secondary-2);
+}
+
+.secondary-3 {
+  color: var(--secondary-3);
+}
+
+.secondary-4 {
+  color: var(--secondary-4);
+}
+
+.secondary-white {
+  color: var(--secondary-white);
+}
+
+.primary-bg-2 {
+  background-color: var(--primary-2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.btn-primary {
+  color: var(--primary-1);
+  background-color: var(--accent-1);
+}
+
+.btn-primary:hover {
+  transition: background-color 0.5s;
+  background-color: #FFAC6B;
+}
+
+.btn-default {
+  color: var(--secondary-4);
+  background-color: #1C2B3A;
+}
+
+.btn-default:hover {
+  transition: background-color 0.5s;
+  background-color: #263B50;
+}
+
+.btn-ghost {
+  color: var(--secondary-1)
+}
+
+.btn-ghost:hover {
+  border: rgba(255, 255, 255, 0.5);
+}
+
+.border-left {
+  border-left: 1px solid var(--lines-color);
+}
+
+.border-right {
+  border-right: 1px solid var(--lines-color);
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--lines-color);
+}
+
+.border-top {
+  border-top: 1px solid var(--lines-color);
+}
+
+body {
+  background-color: var(--primary-2);
+  font-family: 'Fira Code',-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+button:focus {
+  outline: none;
+}
