@@ -39,8 +39,8 @@ export default function MainNav() {
   return (
     <Resizable
       className="h-full border-right text-xs"
-      defaultSize={{ width: "207px" }}
-      minWidth={"190px"}
+      defaultSize={{ width: "224px" }}
+      minWidth={"200px"}
       maxWidth={"220px"}
       enable={{
         top: false,
@@ -236,10 +236,10 @@ export default function MainNav() {
               }
             >
               <p className="flex items-center gap-2">
-                <i className="ri-mail-fill text-md"></i> angebelard@gmail.com
+                <i className="ri-mail-fill text-md"></i> noelmugisha332@gmail.com
               </p>
               <p className="flex items-center gap-2">
-                <i className="ri-phone-fill text-md"></i> +250780578131
+                <i className="ri-phone-fill text-md"></i> +250793136798 
               </p>
             </div>
           </div>
