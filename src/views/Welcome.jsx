@@ -32,7 +32,7 @@ export default function Welcome() {
           <span className="secondary-white">;</span>
         </p>
       </div>
-{/*       <div className="w-6/12 relative">
+      {/* <div className="w-6/12 relative">
         <MacImgWindow
           img={my_data.img}
           img_name={my_data.firstName}
