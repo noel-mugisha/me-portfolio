@@ -1,9 +1,76 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+
+// Local skeleton components for a consistent loading look
+const SkeletonBadge = () => (
+  <div className="h-[25px] w-24 bg-[#1e2d3d] rounded animate-pulse"></div>
+);
+
+const SkeletonGroup = () => (
+  <div className="mb-6 w-full">
+    <div className="h-3 bg-[#1e2d3d] rounded w-1/3 mb-3 animate-pulse"></div>
+    <div className="flex flex-wrap gap-2">
+      {[...Array(6)].map((_, i) => <SkeletonBadge key={i} />)}
+    </div>
+  </div>
+);
 
 export default function AllSkills() {
+  const [loading, setLoading] = useState(true);
+
+  // Simulate a loading period for a better UX
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Animation variants for Framer Motion
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15, // Each skill group will animate in one after another
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
+  // Show skeleton loader while loading
+  if (loading) {
+    return (
+      <div className="w-full">
+        <SkeletonGroup />
+        <SkeletonGroup />
+        <SkeletonGroup />
+        <SkeletonGroup />
+        <SkeletonGroup />
+        <SkeletonGroup />
+      </div>
+    );
+  }
+
+  // Show animated content after loading
   return (
-    <div className="w-full">
-      <div className="mb-6">
+    <motion.div
+      className="w-full"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <motion.div className="mb-6" variants={itemVariants}>
         <p className="mb-2 text-xs font-bold">
           // frontend frameworks and libraries{" "}
         </p>
@@ -49,8 +116,9 @@ export default function AllSkills() {
             src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white"
           />
         </p>
-      </div>
-      <div className="mb-6">
+      </motion.div>
+
+      <motion.div className="mb-6" variants={itemVariants}>
         <p className="mb-2 text-xs font-bold">
           // backend frameworks and libraies
         </p>
@@ -66,22 +134,26 @@ export default function AllSkills() {
           <img src="https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&badgeColor=010101" />
           <img src="https://img.shields.io/badge/opencv-%23white.svg?style=for-the-badge&logo=opencv&logoColor=white" />
         </p>
-      </div>
-      <div className="mb-6">
+      </motion.div>
+
+      <motion.div className="mb-6" variants={itemVariants}>
         <p className="mb-2 text-xs font-bold">// mobile frameworks</p>
         <p className="flex flex-wrap gap-2">
           <img src="https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white" />
+          <img src="https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" />
         </p>
-      </div>
-      <div className="mb-6">
+      </motion.div>
+
+      <motion.div className="mb-6" variants={itemVariants}>
         <p className="mb-2 text-xs font-bold">// ML</p>
         <p className="flex flex-wrap gap-2">
           <img src="https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white" />
           <img src="https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white" />
           <img src="https://img.shields.io/badge/cvzone-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white" />
         </p>
-      </div>
-      <div className="mb-6">
+      </motion.div>
+
+      <motion.div className="mb-6" variants={itemVariants}>
         <p className="mb-2 text-xs font-bold">// design</p>
         <p className="flex flex-wrap gap-2">
           <img src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white" />
@@ -89,8 +161,9 @@ export default function AllSkills() {
           <img src="https://img.shields.io/badge/adobe%20illustrator-%23FF9A00.svg?style=for-the-badge&logo=adobe%20illustrator&logoColor=white" />
           <img src="https://img.shields.io/badge/blender-%23F5792A.svg?style=for-the-badge&logo=blender&logoColor=white" />{" "}
         </p>
-      </div>
-      <div className="mb-6">
+      </motion.div>
+
+      <motion.div className="mb-6" variants={itemVariants}>
         <p className="mb-2 text-xs font-bold">// operating systems</p>
         <p className="flex flex-wrap gap-2">
           <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" />
@@ -100,7 +173,7 @@ export default function AllSkills() {
           <img src="https://img.shields.io/badge/-Zorin%20OS-%2310AAEB?style=for-the-badge&logo=zorin&logoColor=white" />
           <img src="https://img.shields.io/badge/-RaspberryPi-C51A4A?style=for-the-badge&logo=Raspberry-Pi" />
         </p>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
