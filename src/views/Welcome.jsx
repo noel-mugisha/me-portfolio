@@ -1,4 +1,5 @@
 import React from "react";
+import { TypeAnimation } from "react-type-animation";
 import bgBlurs from "../assets/bg-blurs.png";
 import MacImgWindow from "../components/MacWindow";
 import { my_data } from "../data";
@@ -15,12 +16,38 @@ export default function Welcome() {
       className="flex-1 flex justify-center items-center overflow-hidden m-auto w-8/12"
     >
       <div className="w-5/12 secondary-white">
-        <p className=" text-xs">Hellooo 👋. I'm</p>
+        <p className=" text-xs">
+          <TypeAnimation
+            sequence={["Hellooo 👋. I'm", 1000]}
+            wrapper="span"
+            speed={50}
+            style={{ display: "inline-block" }}
+            repeat={Infinity}
+          />
+        </p>
         <h4 className=" text-5xl mt-3">{my_data.firstName}</h4>
-        <p className=" text-lg mt-2 secondary-3">{my_data.proffession}</p>
-        <p className=" text-xs mt-14 secondary-1">// welcome to my portfolio</p>
-        <p className=" text-xs mt-1 secondary-1">
-          // you can also visit my Github account
+        <p className=" text-lg mt-2 secondary-3">
+          <TypeAnimation
+            sequence={[my_data.proffession, 1000]}
+            wrapper="span"
+            speed={50}
+            style={{ display: "inline-block" }}
+            repeat={Infinity}
+          />
+        </p>
+        <p className=" text-xs mt-14 secondary-1">
+          <TypeAnimation
+            sequence={[
+              "// welcome to my portfolio",
+              1000,
+              "// you can also visit my Github account",
+              1000,
+            ]}
+            wrapper="span"
+            speed={50}
+            style={{ display: "inline-block" }}
+            repeat={Infinity}
+          />
         </p>
         <p className="text-xs mt-1">
           <span className="secondary-3">const </span>
