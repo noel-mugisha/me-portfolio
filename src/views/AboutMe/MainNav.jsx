@@ -36,6 +36,13 @@ export default function MainNav() {
   let active_educationLevel_handler = (newstate) =>
     dispatch(education_level_actions.setActive(newstate));
 
+  // --- NEW: Array of icons for the education levels ---
+  const educationIcons = [
+    "ri-terminal-box-fill", 
+    "ri-flask-fill",         
+    "ri-pencil-ruler-2-fill",
+  ];
+
   return (
     <Resizable
       className="h-full border-right text-xs"
@@ -147,7 +154,7 @@ export default function MainNav() {
               <div
                 className={
                   (education_panel_state ? "h-auto block" : "hidden h-0") +
-                  " pl-7 secondary-1"
+                  " pl-7 secondary-1 flex flex-col" // Added flex-col for alignment
                 }
               >
                 {my_data.education &&
@@ -155,7 +162,7 @@ export default function MainNav() {
                     <button
                       key={i}
                       className={
-                        "hover:text-white hover:opacity-80 " +
+                        "hover:text-white hover:opacity-80 flex items-center gap-2 py-1 " + // Added flex items-center gap-2
                         (education_level_state === i &&
                         active_persInfo_state === 2
                           ? "secondary-4"
@@ -166,9 +173,9 @@ export default function MainNav() {
                         active_educationLevel_handler(i);
                       }}
                     >
-                      <i className="ri-ball-pen-line"></i>
+                      {/* --- UPDATED: Dynamic icon based on education level --- */}
+                      <i className={`${educationIcons[i]}`}></i>
                       <span>
-                        {" "}
                         {education.level.toLowerCase().split(" ").join("-")}
                       </span>
                     </button>
@@ -204,8 +211,8 @@ export default function MainNav() {
               {my_data.languages &&
                 my_data.languages.map((lang, i) => (
                   <p key={i} className="flex items-center gap-2">
-                    <i className="ri-global-fill text-md"></i>
-                    <span> {lang}</span>
+                    <i className="iconify" data-icon={lang.icon}></i>
+                    <span> {lang.name}</span>
                   </p>
                 ))}
             </div>
@@ -239,7 +246,7 @@ export default function MainNav() {
                 <i className="ri-mail-fill text-md"></i> noelmugisha332@gmail.com
               </p>
               <p className="flex items-center gap-2">
-                <i className="ri-phone-fill text-md"></i> +250793136798 
+                <i className="ri-phone-fill text-md"></i> +250793136798
               </p>
             </div>
           </div>

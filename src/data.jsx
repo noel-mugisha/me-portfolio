@@ -58,7 +58,11 @@ export const my_data = {
     "AI🤖",
     "music🎵",
   ],
-  languages: ["English", "Kinyarwanda", "French"],
+  languages: [
+    { name: "English", icon: "circle-flags:uk" },
+    { name: "Kinyarwanda", icon: "circle-flags:rw" },
+    { name: "French", icon: "circle-flags:fr" },
+  ],
   education: [
     {
       level: "High School",
@@ -71,7 +75,7 @@ export const my_data = {
         "C++",
         "Python",
         "Java",
-        "JavaScript",
+        "JavaScript & TypeScript",
         "mySql + postgreSql",
         "NodeJs",
         "Software Analysis and Design",
