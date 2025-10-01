@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = true;
+const initialState = false;
 const education_panel_slice = createSlice({
   name: "education_panel_open",
   initialState,

@@ -77,7 +77,6 @@ export const my_data = {
         "Software Analysis and Design",
         "Ethical hacking",
         "Embedded systems",
-        "Advanced networking",
         "DevOps",
         "Php",
         "Mobile development",

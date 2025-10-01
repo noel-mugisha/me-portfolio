@@ -14,7 +14,7 @@ export default function Skills_Certificates_Viewer() {
         : "all_skills"
       : "certificates";
   return (
-    <div className="h-full border-right text-sm secondary-1 flex-col flex-1 gap-0 overflow-hidden">
+    <div className="h-full border-right text-sm secondary-1 flex-col flex-1 gap-0 overflow-y-auto no-scrollbar">
       <div className="w-full border-bottom h-[43.7px] flex">
         <button className="flex h-full justify-center px-3 items-center border-right hover:bg-transparent text-sm">
           <span>{active_panel}</span>

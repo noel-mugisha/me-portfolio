@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = true;
+const initialState = false;
 const personalinfo_panel_slice = createSlice({
   name: "personalinfo_panel_open",
   initialState,

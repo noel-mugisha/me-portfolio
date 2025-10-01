@@ -192,7 +192,7 @@ export default function Editor() {
   }, [active_panel, bioRef.current]);
   return (
     <Resizable
-      className="h-full border-right text-sm secondary-1 flex-col gap-0 overflow-hidden"
+      className="h-full border-right text-sm secondary-1 flex-col gap-0 overflow-y-auto no-scrollbar"
       defaultSize={{ width: "55%" }}
       minWidth={"45%"}
       maxWidth={"60%"}

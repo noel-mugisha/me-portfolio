@@ -14,7 +14,7 @@ export default function Home() {
   const active = useSelector((store) => store.navigation);
   return (
     <>
-      <div className="lg:h-screen lg:flex flex-col gap-0 hidden">
+      <div className="hidden h-screen lg:flex flex-col gap-0">
         <Navbar />
         {subViews[active]}
         <Footer />
