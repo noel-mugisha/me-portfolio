@@ -7,7 +7,7 @@ export const my_data = {
   proffession: "Fullstack > Backend developer",
   github: "noel-mugisha",
   links: {
-    github: "https://github.com/noel-mugisha/",
+    github: "https://github.com/noel-mugisha",
     instagram: "https://www.instagram.com/n.0.e_.l/",
     // linkedin: "",
     twitter: "https://x.com/noelmugisha332",

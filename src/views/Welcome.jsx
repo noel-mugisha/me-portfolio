@@ -49,7 +49,7 @@ export default function Welcome() {
             repeat={Infinity}
           />
         </p>
-        <p className="text-xs mt-1">
+        <p className="text-xs mt-1 whitespace-nowrap">
           <span className="secondary-3">const </span>
           <span className="secondary-2">githubLink </span>
           <span className="secondary-white">= </span>
