@@ -16,8 +16,7 @@ export default function FormCode() {
   const [showCursor, setShowCursor] = useState(true);
   const typingTimeoutRef = useRef(null);
 
-  // Parse code into tokens for proper syntax highlighting
-  const codeStructure = [
+  const codeSkeleton = [
     { type: 'keyword', text: 'const' },
     { type: 'space', text: ' ' },
     { type: 'literal', text: 'button' },
@@ -28,7 +27,6 @@ export default function FormCode() {
     { type: 'symbol', text: '.' },
     { type: 'property', text: 'querySelector' },
     { type: 'bracket', text: '(' },
-    // --- UPDATED: Removed single quotes ---
     { type: 'string', text: '#submit-btn', onequote: true },
     { type: 'bracket', text: ')' },
     { type: 'symbol', text: ';' },
@@ -44,29 +42,25 @@ export default function FormCode() {
     { type: 'indent', text: '  ' },
     { type: 'property', text: 'name' },
     { type: 'symbol', text: ': ' },
-    // --- UPDATED: Removed double quotes ---
-    { type: 'string', text: form.name },
+    { type: 'dynamic', field: 'name' }, // dynamic field
     { type: 'symbol', text: ',' },
     { type: 'newline', text: '\n' },
     { type: 'indent', text: '  ' },
     { type: 'property', text: 'email' },
     { type: 'symbol', text: ': ' },
-    // --- UPDATED: Removed double quotes ---
-    { type: 'string', text: form.email },
+    { type: 'dynamic', field: 'email' }, // dynamic field
     { type: 'symbol', text: ',' },
     { type: 'newline', text: '\n' },
     { type: 'indent', text: '  ' },
     { type: 'property', text: 'message' },
     { type: 'symbol', text: ': ' },
-    // --- UPDATED: Removed double quotes ---
-    { type: 'string', text: form.message },
+    { type: 'dynamic', field: 'message' }, // dynamic field
     { type: 'symbol', text: ',' },
     { type: 'newline', text: '\n' },
     { type: 'indent', text: '  ' },
     { type: 'property', text: 'date' },
     { type: 'symbol', text: ': ' },
-    // --- UPDATED: Removed double quotes ---
-    { type: 'string', text: moment(new Date()).format("ddd DD MMM") },
+    { type: 'dynamic', field: 'date' }, // dynamic date field
     { type: 'newline', text: '\n' },
     { type: 'bracket', text: '}', second: true },
     { type: 'symbol', text: ';' },
@@ -76,7 +70,6 @@ export default function FormCode() {
     { type: 'symbol', text: '.' },
     { type: 'property', text: 'addEventListener' },
     { type: 'bracket', text: '(' },
-    // --- UPDATED: Removed single quotes ---
     { type: 'string', text: 'click', onequote: true },
     { type: 'symbol', text: ', ' },
     { type: 'bracket', text: '()', second: true },
@@ -103,33 +96,37 @@ export default function FormCode() {
   useEffect(() => {
     const cursorInterval = setInterval(() => {
       setShowCursor(prev => !prev);
-    }, 530); // Blink every 530ms
+    }, 530);
 
     return () => clearInterval(cursorInterval);
   }, []);
 
-  // Realistic typing animation
+  
   useEffect(() => {
     setDisplayedCode("");
     setIsTyping(true);
-    
+
     let currentIndex = 0;
     let currentCharCount = 0;
 
     const typeNextCharacter = () => {
-      if (currentIndex < codeStructure.length) {
-        const currentToken = codeStructure[currentIndex];
-        const tokenText = currentToken.text || ""; // Ensure tokenText is a string
-        
+      if (currentIndex < codeSkeleton.length) {
+        const currentToken = codeSkeleton[currentIndex];
+        const tokenText = currentToken.text || "";
+
+        if (currentToken.type === "dynamic") {
+          currentIndex++;
+          typeNextCharacter();
+          return;
+        }
+
         if (currentCharCount < tokenText.length) {
-          // Type one character from current token
           setDisplayedCode(prev => prev + tokenText[currentCharCount]);
           currentCharCount++;
 
-          // Variable typing speed for realism
           let delay;
           const currentChar = tokenText[currentCharCount - 1];
-          
+
           if (currentChar === '\n') {
             delay = Math.random() * 200 + 150;
           } else if (';,{}'.includes(currentChar)) {
@@ -148,7 +145,6 @@ export default function FormCode() {
 
           typingTimeoutRef.current = setTimeout(typeNextCharacter, delay);
         } else {
-          // Move to next token
           currentIndex++;
           currentCharCount = 0;
           typeNextCharacter();
@@ -165,17 +161,33 @@ export default function FormCode() {
         clearTimeout(typingTimeoutRef.current);
       }
     };
-  }, [form.name, form.email, form.message]);
+  }, []); 
 
-  // Render code with syntax highlighting components
+  
   const renderCodeWithHighlighting = () => {
     let renderedChars = 0;
     const elements = [];
     let key = 0;
 
-    for (let i = 0; i < codeStructure.length; i++) {
-      const token = codeStructure[i];
-      const tokenText = token.text || ""; // Ensure tokenText is a string
+    for (let i = 0; i < codeSkeleton.length; i++) {
+      const token = codeSkeleton[i];
+      const tokenText = token.text || "";
+
+      if (token.type === "dynamic") {
+        let dynamicValue = "";
+        if (token.field === "name") dynamicValue = form.name;
+        if (token.field === "email") dynamicValue = form.email;
+        if (token.field === "message") dynamicValue = form.message;
+        if (token.field === "date") {
+          dynamicValue = moment(new Date()).format("ddd DD MMM"); 
+        }
+
+        elements.push(
+          <StringColorizer key={key++} string={dynamicValue} onequote={false} />
+        );
+        continue;
+      }
+
       const tokenLength = tokenText.length;
       const charsToShow = Math.min(tokenLength, displayedCode.length - renderedChars);
 
@@ -227,8 +239,7 @@ export default function FormCode() {
           <span 
             className={`inline-block w-[1px] h-3 bg-white ${showCursor ? 'opacity-100' : 'opacity-0'}`}
             style={{ transition: 'opacity 0.1s' }}
-          >
-          </span>
+          />
         )}
       </div>
     </div>
