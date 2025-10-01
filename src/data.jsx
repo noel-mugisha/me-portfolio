@@ -17,11 +17,7 @@ export const my_data = {
     phone: "+250793136798",
   },
   major_webdev_skills: [
-    {
-      skill: "Javascript + HTML + CSS",
-      level: 100,
-      icon: "vscode-icons:file-type-js",
-    },
+    { skill: "Java", level: 99, icon: "vscode-icons:file-type-java" },
     { skill: "React", level: 97, icon: "vscode-icons:file-type-reactts" },
     {
       skill: "NodeJs + Express",
@@ -35,8 +31,17 @@ export const my_data = {
     { skill: "Django", level: 75, icon: "vscode-icons:file-type-django" },
   ],
   major_prog_skills: [
+    {
+      skill: "Javascript + HTML + CSS",
+      level: 95,
+      icon: "vscode-icons:file-type-js",
+    },
+    {
+      skill: "TypeScript",
+      level: 95,
+      icon: "vscode-icons:file-type-typescript-official",
+    },
     { skill: "Python", level: 93, icon: "vscode-icons:file-type-python" },
-    { skill: "Java", level: 85, icon: "vscode-icons:file-type-java" },
     { skill: "C++", level: 85, icon: "vscode-icons:file-type-cpp" },
     { skill: "C", level: 80, icon: "vscode-icons:file-type-c" },
     { skill: "Arduino", level: 85, icon: "vscode-icons:file-type-arduino" },

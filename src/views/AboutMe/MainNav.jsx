@@ -154,7 +154,7 @@ export default function MainNav() {
               <div
                 className={
                   (education_panel_state ? "h-auto block" : "hidden h-0") +
-                  " pl-7 secondary-1 flex flex-col" // Added flex-col for alignment
+                  " pl-7 secondary-1 flex flex-col"
                 }
               >
                 {my_data.education &&
@@ -162,7 +162,7 @@ export default function MainNav() {
                     <button
                       key={i}
                       className={
-                        "hover:text-white hover:opacity-80 flex items-center gap-2 py-1 " + // Added flex items-center gap-2
+                        "hover:text-white hover:opacity-80 flex items-center gap-2 py-1 " + 
                         (education_level_state === i &&
                         active_persInfo_state === 2
                           ? "secondary-4"
