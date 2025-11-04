@@ -1,4 +1,6 @@
 import noel from "./assets/noel.jpg";
+import thechapters from "./assets/thechapters.png";
+import pms from "./assets/pms.png";
 
 export const my_data = {
   firstName: "Noel Mugisha",
@@ -131,12 +133,44 @@ export const my_data = {
       gitLink: "https://github.com/noel-mugisha/Money-Manager",
       liveLink: "https://money-manager-ws4y.vercel.app",
     },
-    // {
-    //   name: "SparkCinema",
-    //   desc: "SparkCinema is a reliable streaming platform for Rwandan Movies.",
-    //   smallDesc: "A platform for streaming Rwandan Movies",
-    //   tech: ["React"],
-    //   gitLink: "https://spark-cinema.vercel.app/",
-    // },
+    {
+      name: "RNRS-Urumuri",
+      desc: "A user-friendly app to connect and empower non-employed Rwandans.",
+      smallDesc: "A job-portal platform for non-employed Rwandans.",
+      tech: ["NextJs"],
+      img: "https://raw.githubusercontent.com/noel-mugisha/rnrs-project/main/frontend/screenshots/image.png",
+      gitLink: "https://github.com/noel-mugisha/rnrs-project",
+      liveLink: "https://rnrs-project-vcnz-kte9acnjq-noelguy53-9024s-projects.vercel.app/",
+    },
+    {
+      name: "TheChapters",
+      desc: "A user-friendly app to connect basketball enthusiasts and organize tournaments.",
+      smallDesc: "A youth platform for basketball tournaments.",
+      tech: ["React"],
+      img: thechapters,
+      liveLink: "https://thechapters.rw/",
+    },
+    {
+      name: "Smart-Park",
+      desc: "A smart app system for parking management.",
+      smallDesc: "A smart app solution for parking management.",
+      tech: ["NextJs, Express, Postgres"],
+      img: pms,
+      gitLink: "https://github.com/noel-mugisha/ParkingApp-Management-System",
+    },
+    {
+      name: "Ecommerce Backend",
+      desc: "A springboot backend for ecommerce applications",
+      smallDesc: "A modern springboot backend for ecommerce applications.",
+      tech: ["SpringBoot, PostgreSQL"],
+      gitLink: "https://github.com/noel-mugisha/Ecommerce-Backend-SpringBoot",
+    },
+    {
+      name: "RRA Taxing System",
+      desc: "A springboot backend for RRA Taxing applications",
+      smallDesc: "A modern springboot tax management system for RRA.",
+      tech: ["SpringBoot, PostgreSQL"],
+      gitLink: "https://github.com/noel-mugisha/RRA-Tax-Management-System",
+    },
   ],
 };

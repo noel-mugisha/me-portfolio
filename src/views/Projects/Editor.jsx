@@ -30,10 +30,10 @@ export default function Editor() {
         </button>
       </div>
       <div className="w-full h-full flex justify-between">
-        {/* Updated padding from p-4 to p-8 for better spacing */}
         <div className="h-full overflow-auto p-8 flex-1 no-scrollbar">
-          {/* Updated classes to align cards to the top-left */}
-          <div className="flex items-start justify-start w-full gap-8 flex-wrap">
+          {/* --- CHANGE IS ON THIS LINE --- */}
+          {/* The horizontal gap is now increased to gap-x-24 for wider spacing */}
+          <div className="flex items-start justify-start w-full gap-x-24 gap-y-16 flex-wrap">
             {projectsToDisplay.length > 0 ? (
               projectsToDisplay.map((project, i) => (
                 <ProjectCard project={project} key={i} index={i} />
