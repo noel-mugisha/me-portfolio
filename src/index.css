@@ -175,3 +175,20 @@ button:focus {
     -ms-overflow-style: none;  
     scrollbar-width: none; 
 }
+
+/* Add a subtle transition to all buttons for a smoother effect */
+.btn-primary, .btn-default {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Darken the primary button on hover */
+.btn-primary:hover {
+  background-color: #E59454; /* This is a darker shade of the original #FEA55F */
+  transform: translateY(-2px); /* Add a slight lift effect */
+}
+
+/* Give the default button a similar hover effect */
+.btn-default:hover {
+  background-color: #263B50;
+  transform: translateY(-2px);
+}

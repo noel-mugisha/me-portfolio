@@ -1,8 +1,8 @@
-import belix from "./assets/noel.jpg";
+import noel from "./assets/noel.jpg";
 
 export const my_data = {
   firstName: "Noel Mugisha",
-  img: belix,
+  img: noel,
   surname: "Guy",
   proffession: "Fullstack > Backend developer",
   github: "noel-mugisha",
@@ -120,48 +120,23 @@ export const my_data = {
     },
 
   ],
-  techs: [
-    { icon: "ri-reactjs-line", tech: "React" },
-    { icon: "ri-angularjs-fill", tech: "Angular" },
-    { icon: "ri-flutter-fill", tech: "Flutter" },
-  ],
+  techs: [],
   projects: [
     {
-      name: "CodeAMA",
-      desc: "CodeAma is the best way to connect beginner coders to well experienced programmers all over the globe.",
-      smallDesc: "Code Community to connect junior coders to seniors",
-      tech: ["Angular"],
-      gitLink: "https://codeama-frontend-five.vercel.app/",
-    },
-    {
-      name: "SparkCinema",
-      desc: "SparkCinema is a reliable streaming platform for Rwandan Movies.",
-      smallDesc: "A platform for streaming Rwandan Movies",
+      name: "Money Manager",
+      desc: "A user-friendly app to track your income and expenses, helping you manage your finances effectively.",
+      smallDesc: "An intuitive app for tracking income and expenses.",
       tech: ["React"],
-      gitLink: "https://spark-cinema.vercel.app/",
+      img: "https://raw.githubusercontent.com/noel-mugisha/Money-Manager/main/screenshots/dashboard.png",
+      gitLink: "https://github.com/noel-mugisha/Money-Manager",
+      liveLink: "https://money-manager-ws4y.vercel.app",
     },
-    {
-      name: "DailyMoney",
-      desc: "An online business using Tron (Trx) as a payment medium. You get 3% (daily) of your investment.",
-      smallDesc: "Online business earning 3% daily of tron invested",
-      tech: ["React"],
-      gitLink: "https://github.com/a-belard/dailymoney",
-    },
-    {
-      name: "CovData",
-      desc: "CovData let you know and track covid 19 numbers across the world.",
-      smallDesc: "Know covid 19 numbers across the world",
-      tech: ["React"],
-      link: "https://covdata.netlify.app/",
-      gitLink: "https://gitlab.com/belix/covid_data",
-    },
-    {
-      name: "Inst-gram",
-      smallDesc: "Instagram clone built on MERN stack",
-      desc: "Instagram clone built on MERN stack - MongoDB, Express, React, NodJS.",
-      tech: ["React"],
-      link: "https://inst-gram.herokuapp.com/",
-      gitLink: "https://github.com/a-belard/instagram",
-    },
+    // {
+    //   name: "SparkCinema",
+    //   desc: "SparkCinema is a reliable streaming platform for Rwandan Movies.",
+    //   smallDesc: "A platform for streaming Rwandan Movies",
+    //   tech: ["React"],
+    //   gitLink: "https://spark-cinema.vercel.app/",
+    // },
   ],
 };
