@@ -1,6 +1,11 @@
 import noel from "./assets/noel.jpg";
 import thechapters from "./assets/thechapters.png";
 import pms from "./assets/pms.png";
+import springCertImg from "./assets/certificates/images/spring.png";
+import backendCertImg from "./assets/certificates/images/backend.png";
+import frontendCertImg from "./assets/certificates/images/frontend.png";
+import gitCertImg from "./assets/certificates/images/git.png";
+
 
 export const my_data = {
   firstName: "Noel Mugisha",
@@ -171,6 +176,37 @@ export const my_data = {
       smallDesc: "A modern springboot tax management system for RRA.",
       tech: ["SpringBoot, PostgreSQL"],
       gitLink: "https://github.com/noel-mugisha/RRA-Tax-Management-System",
+    },
+  ],
+
+  certificates: [
+    {
+      title: "Advanced Spring-Boot Certificate",
+      issuer: "Mosh Hamedani",
+      year: 2025,
+      previewImg: springCertImg,
+      file: "/pdfs/spring.pdf"
+    },
+    {
+      title: "Backend Development Certificate",
+      issuer: "META",
+      year: 2023,
+      previewImg: backendCertImg,
+      file: "/pdfs/backend.pdf"
+    },
+    {
+      title: "Frontend Development Certificate",
+      issuer: "META",
+      year: 2023,
+      previewImg: frontendCertImg,
+      file: "/pdfs/frontend.pdf"
+    },
+    {
+      title: "Version Control (Git) Certificate",
+      issuer: "META/Coursera",
+      year: 2023,
+      previewImg: gitCertImg,
+      file: "/pdfs/git.pdf"
     },
   ],
 };

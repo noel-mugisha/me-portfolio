@@ -9,7 +9,7 @@ export default function SideNav() {
   let navs = [
     { title: "skills", icon: "ri-terminal-box-fill" },
     { title: "personal info", icon: "ri-user-4-fill" },
-    { title: "files", icon: "ri-gamepad-fill" },
+    { title: "certificates", icon: "ri-award-fill" },
   ];
   return (
     <Resizable
